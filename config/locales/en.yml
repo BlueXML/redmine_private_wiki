@@ -1,0 +1,5 @@
+# English strings go here for Rails i18n
+en:
+  button_setprivate_wiki: Set Private
+  button_setpublic_wiki: Set Public
+  private_flag: PRIVATE

@@ -1,0 +1,19 @@
+
+<% if controller and controller.class.name == 'WikiController' and controller.action_name == "show" and @page and @page.id and @page.visible? %><!--If the actual page is a wiki page-->
+	
+	<!--If the wiki is private, set PRIVATE flag-->
+	<% if @page.private? and User.current.allowed_to?(:view_privates_wiki, @project) %>
+		<span class=private_wiki_flag><%= l(:private_flag) %></span>
+	<% end %>
+
+	<!--If authorized, allow user to see changing privacy buttons-->
+	<%= link_to_if_authorized(l(:button_setprivate_wiki), {:action => 'change_privacy', :id => @page.title, :private => 1}, :method => :post, :class => 'icon icon-setprivate') if !@page.private? %>
+	<%= link_to_if_authorized(l(:button_setpublic_wiki), {:action => 'change_privacy', :id => @page.title, :private => 0}, :method => :post, :class => 'icon icon-setpublic') if @page.private? %>
+
+	<script type="text/javascript">
+        $('.contextual:first').prepend($('.private_wiki_flag'));
+        $('.contextual:first').append($('.icon-setprivate'));
+        $('.contextual:first').append($('.icon-setpublic'));
+    </script>
+
+<% end %>
