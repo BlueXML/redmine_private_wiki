@@ -1,0 +1,5 @@
+# Simplified Chinese strings go here for Rails i18n
+zh:
+  button_setprivate_wiki: 设为私密WIKI
+  button_setpublic_wiki: 设为公开WIKI
+  private_flag: 私密
