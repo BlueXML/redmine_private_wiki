@@ -27,7 +27,7 @@
 				<% if !page.private? %>
 			    	<li><%= link_to page.pretty_title, :action => 'show', :id => page.title, :project_id => page.project %></li>
 			    <% elsif User.current.allowed_to?(:view_privates_wiki, @project) %>
-			    	<li><%= link_to page.pretty_title, :action => 'show', :id => page.title, :project_id => page.project %>&nbsp;&nbsp;&nbsp;&nbsp;<span class='private_wiki_flag' style='display:inline-block;''><%= l(:private_flag) %></span></li>
+			    	<li><%= link_to page.pretty_title, :action => 'show', :id => page.title, :project_id => page.project %>&nbsp;&nbsp;&nbsp;&nbsp;<span class="private_wiki_flag" style="display:inline-block;"><%= l(:private_flag) %></span></li>
 			    <% end %>
 			<% end %>
 		</ul>
@@ -35,7 +35,7 @@
 		<h3><%= format_date(date) %></h3>
 		<ul>
 			<% @pages_by_date[date].each do |page| %>
-				<li><%= link_to page.pretty_title, :action => 'show', :id => page.title, :project_id => page.project %>&nbsp;&nbsp;&nbsp;&nbsp;<span class='private_wiki_flag' style='display:inline-block;''><%= l(:private_flag) %></span></li>
+				<li><%= link_to page.pretty_title, :action => 'show', :id => page.title, :project_id => page.project %>&nbsp;&nbsp;&nbsp;&nbsp;<span class="private_wiki_flag" style="display:inline-block;"><%= l(:private_flag) %></span></li>
 			<% end %>
 		</ul>
 	<% end %>

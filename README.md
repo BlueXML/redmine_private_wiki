@@ -29,7 +29,7 @@ To set public/private wiki page :
 	$bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
 ## Compatibility :
-Tested for RedMine 3.3.* (Manually)
+Tested for RedMine 4.0.3 (Manually)
 
 ## License :
 This plugin is licensed under the MIT license.
