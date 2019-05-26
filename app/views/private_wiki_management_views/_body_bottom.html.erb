@@ -3,7 +3,7 @@
 	
 	<!--If the wiki is private, set PRIVATE flag-->
 	<% if @page.private? and User.current.allowed_to?(:view_privates_wiki, @project) %>
-		<span class=private_wiki_flag><%= l(:private_flag) %></span>
+		<span class="private_wiki_flag private_wiki_head"><%= l(:private_flag) %></span>
 	<% end %>
 
 	<!--If authorized, allow user to see changing privacy buttons-->
@@ -11,7 +11,7 @@
 	<%= link_to_if_authorized(l(:button_setpublic_wiki), {:action => 'change_privacy', :id => @page.title, :private => 0}, :method => :post, :class => 'icon icon-setpublic') if @page.private? %>
 
 	<script type="text/javascript">
-        $('.contextual:first').prepend($('.private_wiki_flag'));
+        $('.contextual:first').prepend($('.private_wiki_flag.private_wiki_head'));
         $('.contextual:first').append($('.icon-setprivate'));
         $('.contextual:first').append($('.icon-setpublic'));
     </script>

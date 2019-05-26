@@ -1,4 +1,4 @@
-class AddPrivateWikiAttribute < ActiveRecord::Migration
+class AddPrivateWikiAttribute < ActiveRecord::Migration[4.2]
 	def change
 		#Add a "Private" attribute used to identify visibility of wikis
 		add_column(:wiki_pages, "private", :boolean, :default => false)

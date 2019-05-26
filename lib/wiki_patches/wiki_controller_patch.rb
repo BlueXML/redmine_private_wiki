@@ -5,7 +5,7 @@ module WikiPatches
      		base.class_eval do
                 unloadable
                 #Test :valide before :show action on wiki_controller
-        		before_filter :validate, :only => [:show,:edit,:rename, :protect, :history, :diff, :annotate, :add_attachment, :destroy]
+        		before_action :validate, :only => [:show,:edit,:rename, :protect, :history, :diff, :annotate, :add_attachment, :destroy]
         	end
         end
 
